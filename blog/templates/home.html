@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block content %}
+
+<form  method="POST" id="signup-form" >
+	{% csrf_token %}
+	<input type="text" name="post_text" id="email" placeholder="Enter your text" />
+	<input type="submit" value="Zapisz" />
+</form>
+<header>
+{% for post in all_posts %}
+    <p>{{ post.post_text }}</p>
+{% endfor %}
+
+{% endblock content %}
+</header>
