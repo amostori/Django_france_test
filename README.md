@@ -175,3 +175,4 @@ repo z apką.
 `ALLOWED_HOSTS = ["taskmate-production-e8f2.up.railway.app", "localhost", "127.0.0.1"]`
 `CSRF_TRUSTED_ORIGINS = ["https://taskmate-production-e8f2.up.railway.app"]`
 
+Zdjęcia pochodzą z https://unsplash.com/s/photos/france
