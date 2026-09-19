@@ -4,10 +4,8 @@ from .models import Post
 from .forms import PostForm
 # Create your views here.
 def home(request): 
-    print(request.method)
     if request.method == 'POST':
         form = PostForm(request.POST or None)
-        print(form.errors)
         if form.is_valid():
             form.save()
             messages.success(request, 'Post created successfully')
@@ -16,3 +14,8 @@ def home(request):
         all_posts = Post.objects.all()
     
     return render(request, 'home.html', {'all_posts': all_posts})
+
+def delete(request, post_id):
+    post = Post.objects.get(pk=post_id)
+    post.delete()
+    return redirect('home')
